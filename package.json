@@ -1,0 +1,29 @@
+{
+  "name": "tstest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && node build/index.js",
+    "clean": "rimraf ./build",
+    "build": "rimraf ./build && tsc",
+    "start:dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "g0t0pointer0ne",
+  "license": "ISC",
+  "dependencies": {
+    "@types/selenium-webdriver": "^4.0.9",
+    "chromedriver": "^84.0.1",
+    "dependencies": "0.0.1",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  },
+  "devDependencies": {
+    "@types/node": "^14.6.0",
+    "nodemon": "^2.0.4",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  }
+}
