@@ -16,16 +16,11 @@ export class BaseTest {
     public init(conf: IDriverConfig) {
         this.dp = new DriverProvider()
         this.dp.configDriver(conf) // some config here
-    }
-
-    public startProcess() {
         this.driver = this.dp.getDriver()
     }
 
-    public async goToPage(url: string) {
-        // open page
-        await this.driver.navigate().to(url)
-        await this.driver.findElement(By.name('q')).sendKeys('putin', Key.RETURN)
+    public getDriver() {
+        return this.driver
     }
 
     public async finishIt() {
