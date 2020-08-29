@@ -8,7 +8,7 @@
     "clean": "rimraf ./build",
     "build": "rimraf ./build && tsc",
     "start:dev": "nodemon",
-    "test": "npm run build && mocha build/test"
+    "test": "npm run build && mocha --timeout 10000 build/test"
   },
   "keywords": [],
   "author": "g0t0pointer0ne",

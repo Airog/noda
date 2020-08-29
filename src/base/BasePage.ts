@@ -1,6 +1,6 @@
 import { WebDriver, By } from 'selenium-webdriver';
 export abstract class BasePage {
-    
+
     private url!: string
     private driver: WebDriver
 
@@ -13,14 +13,14 @@ export abstract class BasePage {
     }
 
     public async navigate(): Promise<void> {
-        await this.driver.navigate().to(this.url);
+        await this.driver.navigate().to(this.url)
     }
 
-    protected async $(cssSelector: string){
-        return await this.driver.findElement(By.className(cssSelector))
+    protected async $(cssSelector: string) {
+        return await this.driver.findElement(By.css(cssSelector))
     }
 
-    protected async $$(cssSelector: string){
-        return await this.driver.findElements(By.className(cssSelector))
+    protected async $$(cssSelector: string) {
+        return await this.driver.findElements(By.css(cssSelector))
     }
 }
