@@ -13,7 +13,6 @@ export class TheInternet extends BasePage {
 
     public async getHeaderText() {
         let header = await this.$('h1')
-        let headerText = await header.getText()
-        return headerText
+        return await header.getText()
     }
 }

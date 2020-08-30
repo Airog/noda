@@ -8,8 +8,7 @@ export class ABTesting extends BasePage {
     }
 
     public async getHeaderText() {
-        let header = await this.$('h3')
-        let headerText = await header.getText()
-        return headerText
+        let header = this.$('#content > div > h3')
+        return (await header).getText()
     }
 }

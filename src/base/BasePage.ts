@@ -1,4 +1,4 @@
-import { WebDriver, By } from 'selenium-webdriver';
+import { WebDriver, By, until } from 'selenium-webdriver';
 export abstract class BasePage {
 
     private url!: string
@@ -17,10 +17,12 @@ export abstract class BasePage {
     }
 
     protected async $(cssSelector: string) {
-        return await this.driver.findElement(By.css(cssSelector))
+        return await this.driver.wait(until.elementLocated(By.css(cssSelector)))
     }
 
     protected async $$(cssSelector: string) {
-        return await this.driver.findElements(By.css(cssSelector))
+        let selector = By.css(cssSelector)
+        await this.driver.wait(until.elementLocated(selector))
+        return await this.driver.findElements(selector)
     }
 }
