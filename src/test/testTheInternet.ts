@@ -8,6 +8,7 @@ let pageInternet: TheInternet
 let pageABtesting: ABTesting
 let base: BaseTest
 
+//add .skip(... to skip test
 describe('run browser and look something on google', function () {
     before('before run...', async () => {
         base = new BaseTest()
